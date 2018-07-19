@@ -1,0 +1,13 @@
+---
+  # Task para a instalação do mariadb
+
+  - name: Instalar mariadb
+    yum:
+      name: mariadb-server
+      state: present
+
+  - name: Iniciar o serviço do mariadb
+    service:
+      name: mariadb
+      state: started
+      
