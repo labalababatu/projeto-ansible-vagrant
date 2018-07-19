@@ -9,4 +9,9 @@
   - name: Instalar o nginx
     yum:
       name: nginx
-      state: present    
+      state: present
+      
+  - name: Iniciar nginx
+    service:
+      name: nginx
+      state: started    
