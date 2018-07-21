@@ -1,6 +1,5 @@
 ---
-  # handlers file for mariadb
-
+  # handlers arquivo para restart do mariadb
   - name: restart mysql
     service:
       name: mysql.service

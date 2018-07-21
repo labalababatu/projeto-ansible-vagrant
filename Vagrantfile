@@ -4,7 +4,7 @@
 
     config.vm.box = "centos/7"
     config.vm.network "private_network", ip: "192.168.33.10"
-    # config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 80, host: 8080
 
     # Disable the new default behavior introduced in Vagrant 1.7, to
     # ensure that all Vagrant machines will use the same SSH key pair.

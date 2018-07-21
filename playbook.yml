@@ -1,10 +1,11 @@
+# Task arquivo principal para execução das roles
 - name: Rivendel Tecnologia Projeto Ansible + Vagrant Instalação mariadb, WordPress, Nginx e PHP-FPM Seguindo boas práticas.
   hosts: all
   user: vagrant
   become: yes
 
   roles:
-    - php
-    - nginx
     - mariadb
-    - wordpress 
+    - nginx
+    - php-fpm
+    - wordpress

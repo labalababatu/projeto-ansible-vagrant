@@ -1,6 +1,5 @@
 ---
-  # handlers file for nginx
-
+  # handlers arquivo para restart do nginx
   - name: restart nginx
     service:
       name: nginx.service

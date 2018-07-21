@@ -1,0 +1,13 @@
+---
+  # Task para instalação do PHP-FPM e suas dependências
+  - name: Instalar php-fpm e suas dependências
+    yum: name={{item}} state=present
+    with_items:
+      - php
+      - php-fpm
+
+ # Task iniciar o serviço do PHP-FPM
+  - name: Iniciar o serviço do php-fpm
+    service:
+     name: php-fpm
+     state: started

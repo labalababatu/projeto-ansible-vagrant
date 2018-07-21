@@ -1,3 +1,5 @@
-# projeto-ansible-vagrant
+# Rivendel Tecnologia - Projeto ansible + vagrant
 
-Projeto vagrant e ansible, instalação de um ambiente Wordpress, mariadb, nginx e php-fpm.
+Projeto vagrant + ansible, instalação de um ambiente Wordpress, mariadb, nginx e php-fpm.
+
+By Marcos Almeida

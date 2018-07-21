@@ -1,17 +1,26 @@
 ---
   # Task para a instalação do nginx e repositório
-
   - name: Configurar o repositório
     yum:
       name: epel-release
       state: present
 
+  # Task para instalação do nginx
   - name: Instalar o nginx
     yum:
       name: nginx
       state: present
-      
+
+  # Task para iniciar o nginx
   - name: Iniciar nginx
     service:
       name: nginx
-      state: started    
+      state: started
+
+  # Task para copiar o arquivo de configuração do nginx para o diretório
+  - name: Copiar o arquivo de configuração do nginx para o diretório
+    template: src=nginx.conf dest=/etc/nginx/
+
+  # Task para reiniciar o serviço do nginx
+  - name: Reiniciar o serviço do nginx
+    service: name=nginx state=started enabled=true
