@@ -17,6 +17,17 @@
       name: nginx
       state: started
 
+  # Task para criar o arquivo php info para testes
+  - name: Criando arquivo php info
+    copy:
+      dest: "/usr/share/nginx/html/info.php"
+      content: <?php phpinfo() ?>
+
+  # Task desabilitar SELinux
+  - name: Desabilitar o SELinux
+    selinux:
+      state: disabled
+
   # Task para copiar o arquivo de configuração do nginx para o diretório
   - name: Copiar o arquivo de configuração do nginx para o diretório
     template: src=nginx.conf dest=/etc/nginx/

@@ -14,7 +14,7 @@
   # Task para instalar python para suporte das bibliotecas do mysql
   - name: Instalar o python para suporte das bibliotecas do MySQL
     yum: pkg=MySQL-python state=latest
-    
+
   # Task para iniciar o MySQL e habilitar o reboot
   - name: Iniciar o MySQL e habilitar o reboot
     service: name=mariadb state=started enabled=true
@@ -31,3 +31,4 @@
      password: user
      priv: '*.*:ALL'
      state: present
+    become: yes

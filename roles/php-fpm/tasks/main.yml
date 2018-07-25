@@ -5,9 +5,26 @@
     with_items:
       - php
       - php-fpm
+      - php-mysql
 
  # Task iniciar o serviço do PHP-FPM
   - name: Iniciar o serviço do php-fpm
     service:
      name: php-fpm
      state: started
+
+ # Task para copiar o arquivo de configuração do php-fpm para o diretório
+  - name: Copiar o arquivo de configuração do www.conf
+    template: src=www.conf dest=/etc/php-fpm.d/
+
+ # Task para copiar o arquivo de configuração do php.ini para o diretório
+  - name: Copiar o arquivo de configuração do php.ini
+    template: src=php.ini dest=/etc
+
+ # Task para reiniciar o serviço do php-fpm
+  - name: Reiniciar o serviço php-fpm
+    service: name=php-fpm state=started enabled=true
+
+  # Task para reiniciar o serviço do nginx
+  - name: Reiniciar o serviço php-fpm
+    service: name=nginx state=started enabled=true

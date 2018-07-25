@@ -1,16 +1,25 @@
 ---
   # Task para fazer o download do wordpress no diretório tmp
-  - name: Download do wordpress para o diretório tmp
-    get_url:
-      url=https://wordpress.org/latest.tar.gz
-      dest=/usr/share/nginx/html/wordpress.tar.gz
+  #- name: Download do wordpress para o diretório tmp
+  #  get_url:
+  #    url=https://wordpress.org/latest.tar.gz
+  #    dest=/usr/share/nginx/html/wordpress.tar.gz
 
-
+  # Task para descompactar o wordpress no diretório html
   - name: Descompactar o arquivo do wordpress
     unarchive:
       src: /home/marcos_fernando/lab/ansible-vagrant/projeto-ansible-vagrant/roles/wordpress/tasks/wordpress-4.9.7.tar.gz
       dest: /usr/share/nginx/html/
       remote_src: yes
+
+  # Task alterando as permissões da pasta wordpress
+  - name: Alterando as permissões da pasta wordpress
+    file:
+      path: "/usr/share/nginx/html/wordpress"
+      state: directory
+      owner: nginx
+      group: nginx
+      mode: 0777
 
   # Task para extrair o arquivo wordpress.tar.gz para o diretório html
   #- name: Extrair o arquivo wordpress.tar.gz para o diretório html
