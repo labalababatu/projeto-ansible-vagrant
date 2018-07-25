@@ -24,7 +24,3 @@
  # Task para reiniciar o serviço do php-fpm
   - name: Reiniciar o serviço php-fpm
     service: name=php-fpm state=started enabled=true
-
-  # Task para reiniciar o serviço do nginx
-  - name: Reiniciar o serviço php-fpm
-    service: name=nginx state=started enabled=true

@@ -21,6 +21,10 @@
       group: nginx
       mode: 0777
 
+  # Task para reiniciar o serviço do nginx
+  - name: Reiniciar o serviço nginx
+    service: name=nginx state=started enabled=true
+
   # Task para extrair o arquivo wordpress.tar.gz para o diretório html
   #- name: Extrair o arquivo wordpress.tar.gz para o diretório html
   #  unarchive:
